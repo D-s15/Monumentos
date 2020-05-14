@@ -1,0 +1,2 @@
+rootProject.name='Monumentos Diocese Beja'
+include ':app'
