@@ -70,23 +70,10 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
         android:onClick="onClickLogin"
         android:text="Login"
         app:layout_constraintEnd_toStartOf="@+id/button4"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="Registar conta de utilizador"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        tools:layout_editor_absoluteY="536dp" />
 
     <Button
         android:id="@+id/button4"
@@ -95,5 +82,5 @@
         android:onClick="onClickRegister"
         android:text="Registar Conta"
         app:layout_constraintBaseline_toBaselineOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="@+id/button2" />
+        tools:layout_editor_absoluteX="187dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
