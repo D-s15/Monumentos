@@ -66,21 +66,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    <Button
-        android:id="@+id/button"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClickLogin"
-        android:text="Login"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
-        tools:layout_editor_absoluteY="536dp" />
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClickRegister"
-        android:text="Registar Conta"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button"
-        tools:layout_editor_absoluteX="187dp" />
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:onClick="onClickLogin"
+            android:text="Login" />
+
+        <Button
+            android:id="@+id/buttonRegistarConta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickRegister"
+            android:text="Registar Conta"
+            android:textAlignment="viewStart" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

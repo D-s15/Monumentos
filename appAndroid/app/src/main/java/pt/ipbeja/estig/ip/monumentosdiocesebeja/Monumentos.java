@@ -1,69 +1,95 @@
 package pt.ipbeja.estig.ip.monumentosdiocesebeja;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Monumentos {
 
-    private long id;
-    private String horarioManha;
-    private String horarioTarde;
-    private int numeroPontosDeInteresse;
-    private String DescricaoPontosDeInteresse;
-    private String DescricaoMonumento;
+    @PrimaryKey(autoGenerate = true) private long id;
+    private String monumentName;
+    private String morningSchedule;
+    private String afternoonSchedule;
+    private int interestPointsNumber;
+    private String interestPointsDescription;
+    private String monumentDescription;
+    private String monumentImage;
+    private String monumentCoordinates;
 
 
-    public Monumentos(long id, String horarioManha, String horarioTarde, int numeroPontosDeInteresse, String descricaoPontosDeInteresse, String descricaoMonumento) {
+    public Monumentos(long id, String monumentName, String morningSchedule, String afternoonSchedule, int interestPointsNumber, String interestPointsDescription, String monumentDescription, String monumentImage, String monumentCoordinates) {
         this.id = id;
-        this.horarioManha = horarioManha;
-        this.horarioTarde = horarioTarde;
-        this.numeroPontosDeInteresse = numeroPontosDeInteresse;
-        DescricaoPontosDeInteresse = descricaoPontosDeInteresse;
-        DescricaoMonumento = descricaoMonumento;
+        this.monumentName = monumentName;
+        this.morningSchedule = morningSchedule;
+        this.afternoonSchedule = afternoonSchedule;
+        this.interestPointsNumber = interestPointsNumber;
+        this.interestPointsDescription = interestPointsDescription;
+        this.monumentDescription = monumentDescription;
+        this.monumentImage = monumentImage;
+        this.monumentCoordinates = monumentCoordinates;
     }
 
-    public String getDescricaoMonumento() {
-        return DescricaoMonumento;
+    public String getMonumentCoordinates() {
+        return monumentCoordinates;
     }
 
-    public void setDescricaoMonumento(String descricaoMonumento) {
-        DescricaoMonumento = descricaoMonumento;
+    public void setMonumentCoordinates(String monumentCoordinates) {
+        this.monumentCoordinates = monumentCoordinates;
     }
 
-    public String getDescricaoPontosDeInteresse() {
-        return DescricaoPontosDeInteresse;
+    public String getMonumentImage() {
+        return monumentImage;
     }
 
-    public void setDescricaoPontosDeInteresse(String descricaoPontosDeInteresse) {
-        DescricaoPontosDeInteresse = descricaoPontosDeInteresse;
+    public void setMonumentImage(String monumentImage) {
+        this.monumentImage = monumentImage;
     }
 
-    public int getNumeroPontosDeInteresse() {
-        return numeroPontosDeInteresse;
+    public String getMonumentDescription() {
+        return monumentDescription;
     }
 
-    public void setNumeroPontosDeInteresse(int numeroPontosDeInteresse) {
-        this.numeroPontosDeInteresse = numeroPontosDeInteresse;
+    public void setMonumentDescription(String monumentDescription) {
+        this.monumentDescription = monumentDescription;
     }
 
-    public String getHorarioTarde() {
-        return horarioTarde;
+    public String getInterestPointsDescription() {
+        return interestPointsDescription;
     }
 
-    public void setHorarioTarde(String horarioTarde) {
-        this.horarioTarde = horarioTarde;
+    public void setInterestPointsDescription(String interestPointsDescription) {
+        this.interestPointsDescription = interestPointsDescription;
     }
 
-    public String getHorarioManha() {
-        return horarioManha;
+    public int getInterestPointsNumber() {
+        return interestPointsNumber;
     }
 
-    public void setHorarioManha(String horarioManha) {
-        this.horarioManha = horarioManha;
+    public void setInterestPointsNumber(int interestPointsNumber) {
+        this.interestPointsNumber = interestPointsNumber;
     }
 
-    public long getId() {
-        return id;
+    public String getMonumentName() {
+        return monumentName;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setMonumentName(String monumentName) {
+        this.monumentName = monumentName;
+    }
+
+    public String getMorningSchedule() {
+        return morningSchedule;
+    }
+
+    public void setMorningSchedule(String morningSchedule) {
+        this.morningSchedule = morningSchedule;
+    }
+
+    public String getAfternoonSchedule() {
+        return afternoonSchedule;
+    }
+
+    public void setAfternoonSchedule(String afternoonSchedule) {
+        this.afternoonSchedule = afternoonSchedule;
     }
 }
