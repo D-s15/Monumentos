@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MonumentosDetailsActivity extends AppCompatActivity {
+public class MonumentDetailsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_monumentos_details);
+        setContentView(R.layout.activity_monument_details);
     }
+
+
 }

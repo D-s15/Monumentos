@@ -8,15 +8,14 @@ import androidx.room.Query;
 import java.util.List;
 
 @Dao
-public interface MonumentosDao {
+public interface InterestPointDao {
 
-    @Query("SELECT * FROM Monumentos")
-    List<Monumentos> getAll();
+    @Query("SELECT * FROM InterestPoint")
+    List<Monument> getAll();
 
     @Insert
-    void insertAll(Monumentos monumentos);
+    void insertAll(InterestPoint interestPoint);
 
     @Delete
-    void delete(Monumentos monumentos);
-    
+    void delete(InterestPoint interestPoint);
 }

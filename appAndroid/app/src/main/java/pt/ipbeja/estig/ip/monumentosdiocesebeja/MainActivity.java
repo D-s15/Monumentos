@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickMonumentos(View view) {
-
+    Intent intent = new Intent(this, MonumentListActivity.class);
+    startActivity(intent);
     }
 }

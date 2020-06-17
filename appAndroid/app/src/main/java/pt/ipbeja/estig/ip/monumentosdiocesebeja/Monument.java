@@ -4,26 +4,22 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class Monumentos {
+public class Monument {
 
-    @PrimaryKey(autoGenerate = true) private long id;
+    @PrimaryKey(autoGenerate = true)
+    private long id;
     private String monumentName;
     private String morningSchedule;
     private String afternoonSchedule;
-    private int interestPointsNumber;
-    private String interestPointsDescription;
     private String monumentDescription;
     private String monumentImage;
     private String monumentCoordinates;
 
-
-    public Monumentos(long id, String monumentName, String morningSchedule, String afternoonSchedule, int interestPointsNumber, String interestPointsDescription, String monumentDescription, String monumentImage, String monumentCoordinates) {
+    public Monument(long id, String monumentName, String morningSchedule, String afternoonSchedule, String monumentDescription, String monumentImage, String monumentCoordinates) {
         this.id = id;
         this.monumentName = monumentName;
         this.morningSchedule = morningSchedule;
         this.afternoonSchedule = afternoonSchedule;
-        this.interestPointsNumber = interestPointsNumber;
-        this.interestPointsDescription = interestPointsDescription;
         this.monumentDescription = monumentDescription;
         this.monumentImage = monumentImage;
         this.monumentCoordinates = monumentCoordinates;
@@ -53,22 +49,6 @@ public class Monumentos {
         this.monumentDescription = monumentDescription;
     }
 
-    public String getInterestPointsDescription() {
-        return interestPointsDescription;
-    }
-
-    public void setInterestPointsDescription(String interestPointsDescription) {
-        this.interestPointsDescription = interestPointsDescription;
-    }
-
-    public int getInterestPointsNumber() {
-        return interestPointsNumber;
-    }
-
-    public void setInterestPointsNumber(int interestPointsNumber) {
-        this.interestPointsNumber = interestPointsNumber;
-    }
-
     public String getMonumentName() {
         return monumentName;
     }
@@ -91,5 +71,13 @@ public class Monumentos {
 
     public void setAfternoonSchedule(String afternoonSchedule) {
         this.afternoonSchedule = afternoonSchedule;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }
