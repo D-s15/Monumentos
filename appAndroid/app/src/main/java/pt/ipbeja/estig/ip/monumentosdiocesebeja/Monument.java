@@ -6,31 +6,31 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Monument {
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     private long id;
     private String monumentName;
     private String morningSchedule;
     private String afternoonSchedule;
     private String monumentDescription;
     private String monumentImage;
-    private String monumentCoordinates;
+    private String monumentURL;
 
-    public Monument(long id, String monumentName, String morningSchedule, String afternoonSchedule, String monumentDescription, String monumentImage, String monumentCoordinates) {
+    public Monument(long id, String monumentName, String morningSchedule, String afternoonSchedule, String monumentDescription, String monumentImage, String monumentURL) {
         this.id = id;
         this.monumentName = monumentName;
         this.morningSchedule = morningSchedule;
         this.afternoonSchedule = afternoonSchedule;
         this.monumentDescription = monumentDescription;
         this.monumentImage = monumentImage;
-        this.monumentCoordinates = monumentCoordinates;
+        this.monumentURL = monumentURL;
     }
 
-    public String getMonumentCoordinates() {
-        return monumentCoordinates;
+    public String getMonumentURL() {
+        return monumentURL;
     }
 
-    public void setMonumentCoordinates(String monumentCoordinates) {
-        this.monumentCoordinates = monumentCoordinates;
+    public void setMonumentURL(String monumentURL) {
+        this.monumentURL = monumentURL;
     }
 
     public String getMonumentImage() {

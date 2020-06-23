@@ -13,12 +13,12 @@
         android:layout_marginStart="24dp"
         android:text="TextView"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewMonumentImage"
-        app:layout_constraintStart_toEndOf="@+id/imageViewMonumentImage"
-        app:layout_constraintTop_toTopOf="@+id/imageViewMonumentImage" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewMonumentsImage"
+        app:layout_constraintStart_toEndOf="@+id/imageViewMonumentsImage"
+        app:layout_constraintTop_toTopOf="@+id/imageViewMonumentsImage" />
 
     <ImageView
-        android:id="@+id/imageViewMonumentImage"
+        android:id="@+id/imageViewMonumentsImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

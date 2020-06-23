@@ -1,21 +1,18 @@
 package pt.ipbeja.estig.ip.monumentosdiocesebeja;
 
 import androidx.room.Dao;
-import androidx.room.Delete;
-import androidx.room.Insert;
 import androidx.room.Query;
 
 import java.util.List;
-
 @Dao
 public interface InterestPointDao {
 
     @Query("SELECT * FROM InterestPoint")
-    List<Monument> getAll();
+    List<InterestPoint> getAll();
 
-    @Insert
-    void insertAll(InterestPoint interestPoint);
+    @Query("SELECT * FROM InterestPoint WHERE id = :interestPointId")
+            InterestPoint getById(long interestPointId);
 
-    @Delete
-    void delete(InterestPoint interestPoint);
+    @Query("SELECT * FROM InterestPoint WHERE monumentId = :monumentId")
+    List<InterestPoint> getInterestPointsByMonumentId(long monumentId);
 }

@@ -19,10 +19,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onClickVisitaLivre(View view) {
-
-    }
-
     public void onClickVisitaGuiada(View view) {
 
     }

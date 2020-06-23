@@ -8,6 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+
 import java.util.List;
 
 public class MonumentAdapter extends BaseAdapter {
@@ -21,7 +24,7 @@ public class MonumentAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return monumentList.size();
+        return this.monumentList.size();
     }
 
     @Override
@@ -41,12 +44,10 @@ public class MonumentAdapter extends BaseAdapter {
         }
 
         Monument monument = this.getItem(position);
-
         TextView textViewMonumentName = convertView.findViewById(R.id.textViewMonumentName);
-        ImageView imageViewMonumentImage = convertView.findViewById(R.id.imageViewMonumentImage);
-
+        ImageView imageViewMonumentImage = convertView.findViewById(R.id.imageViewMonumentsImage);
+        if (!monument.getMonumentImage().isEmpty()) Glide.with(this.context).load(monument.getMonumentImage()).apply(new RequestOptions().override(600, 200)).into(imageViewMonumentImage);
         textViewMonumentName.setText(monument.getMonumentName());
-        //imageViewMonumentImage.setImageResource();
         return convertView;
     }
 }

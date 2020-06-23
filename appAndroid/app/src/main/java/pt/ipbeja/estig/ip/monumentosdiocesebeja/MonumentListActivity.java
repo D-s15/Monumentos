@@ -27,6 +27,7 @@ public class MonumentListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MonumentListActivity.this, MonumentDetailsActivity.class);
+                intent.putExtra(MonumentDetailsActivity.KEY_ID, id);
                 startActivity(intent);
             }
         });

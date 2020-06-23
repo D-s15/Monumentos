@@ -6,26 +6,43 @@ import androidx.room.PrimaryKey;
 @Entity
 public class InterestPoint {
 
-    @PrimaryKey(autoGenerate = true) private long id;
-    private String name;
-    private String description;
+    @PrimaryKey
+    private long id;
+    private String interestPointName;
+    private String interestPointDesctiption;
     private long monumentId;
     private String interestPointImage;
 
-    public InterestPoint(long id, String name, String description, long monumentId, String interestPointImage) {
+    public InterestPoint(long id, String interestPointName, String interestPointDesctiption, long monumentId, String interestPointImage) {
         this.id = id;
-        this.name = name;
-        this.description = description;
+        this.interestPointName = interestPointName;
+        this.interestPointDesctiption = interestPointDesctiption;
         this.monumentId = monumentId;
         this.interestPointImage = interestPointImage;
     }
 
-    public String getInterestPointImage() {
-        return interestPointImage;
+    public long getId() {
+        return id;
     }
 
-    public void setInterestPointImage(String interestPointImage) {
-        this.interestPointImage = interestPointImage;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getInterestPointName() {
+        return interestPointName;
+    }
+
+    public void setInterestPointName(String interestPointName) {
+        this.interestPointName = interestPointName;
+    }
+
+    public String getInterestPointDesctiption() {
+        return interestPointDesctiption;
+    }
+
+    public void setInterestPointDesctiption(String interestPointDesctiption) {
+        this.interestPointDesctiption = interestPointDesctiption;
     }
 
     public long getMonumentId() {
@@ -36,27 +53,11 @@ public class InterestPoint {
         this.monumentId = monumentId;
     }
 
-    public String getDescription() {
-        return description;
+    public String getInterestPointImage() {
+        return interestPointImage;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
+    public void setInterestPointImage(String interestPointImage) {
+        this.interestPointImage = interestPointImage;
     }
 }
