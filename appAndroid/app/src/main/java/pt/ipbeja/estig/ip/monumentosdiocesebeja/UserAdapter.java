@@ -11,6 +11,8 @@ import java.util.List;
 public class UserAdapter extends BaseAdapter {
     private Context context;
     private List<User> userlist;
+    private UserDao userDao;
+    private User user;
 
     public void userAdapter(Context context, List<User> userlist){
         this.context = context;

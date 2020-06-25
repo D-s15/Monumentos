@@ -8,13 +8,14 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = {Monument.class, InterestPoint.class}, version = 4)
+@Database(entities = {Monument.class, InterestPoint.class, User.class}, version = 4)
 public abstract class AppDatabase extends RoomDatabase {
 
         public abstract MonumentDao getMonumentDao();
 
         public abstract InterestPointDao getInterestPointDao();
 
+        public abstract  UserDao getUserDao();
         private static AppDatabase INSTANCE;
 
         public static AppDatabase getInstance(Context context) {

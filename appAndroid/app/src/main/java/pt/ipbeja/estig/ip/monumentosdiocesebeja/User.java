@@ -1,10 +1,12 @@
 package pt.ipbeja.estig.ip.monumentosdiocesebeja;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity
-public class User {
+@Entity(indices = {@Index(value = "email", unique = true)})
+public class User{
 
     @PrimaryKey(autoGenerate = true)
     private long id;
@@ -16,7 +18,7 @@ public class User {
         this.email = email;
         this.password = password;
     }
-
+    @NonNull
     public long getId() {
         return id;
     }
