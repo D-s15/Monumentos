@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/mapa"
         android:onClick="onClickVisitaGuiada">
 
 
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:text="Iniciar Visita Guiada"
             android:textAlignment="center"
-            android:textColor="@color/design_default_color_background"
+            android:textColor="@color/design_default_color_secondary"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

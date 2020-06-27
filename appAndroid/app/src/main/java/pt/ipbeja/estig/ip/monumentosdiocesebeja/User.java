@@ -18,6 +18,7 @@ public class User{
         this.email = email;
         this.password = password;
     }
+
     @NonNull
     public long getId() {
         return id;

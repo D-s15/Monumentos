@@ -13,8 +13,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
-import org.w3c.dom.Text;
-
 public class MonumentDetailsActivity extends AppCompatActivity {
 
     public static final String KEY_ID = "id";
@@ -34,7 +32,7 @@ public class MonumentDetailsActivity extends AppCompatActivity {
         ImageView imageViewMonumentImage = findViewById(R.id.imageViewMonumentImage);
         TextView textViewMorningSchedule = findViewById(R.id.textViewMorningSchedule);
         TextView textViewAfternoonSchedule = findViewById(R.id.textViewAfternoonSchedule);
-        TextView textViewCoordinates = findViewById(R.id.textViewCoordinates);
+        TextView textViewCoordinates = findViewById(R.id.textViewLocationURL);
         TextView textViewDescription = findViewById(R.id.textViewDescription);
 
         this.monumentDao = AppDatabase.getInstance(this).getMonumentDao();
@@ -49,11 +47,11 @@ public class MonumentDetailsActivity extends AppCompatActivity {
 
             this.monument = this.monumentDao.getById(this.id);
             textViewMonumentName.setText(this.monument.getMonumentName());
-            Glide.with(this).load(this.monument.getMonumentImage()).apply(new RequestOptions().override(800, 800)).into(imageViewMonumentImage);
+            Glide.with(this).load(this.monument.getMonumentImage()).apply(new RequestOptions().override(650, 650)).into(imageViewMonumentImage);
             textViewMorningSchedule.setText("horário de manhã: " + this.monument.getMorningSchedule());
             textViewAfternoonSchedule.setText("horário de tarde: " + this.monument.getAfternoonSchedule());
-            textViewCoordinates.setText("Mapa do Monumento: " + this.monument.getMonumentURL());
-            textViewDescription.setText("Descrição do Monumento: " + this.monument.getMonumentDescription());
+            textViewCoordinates.setText("localização:" + this.monument.getMonumentURL());
+            textViewDescription.setText(this.monument.getMonumentDescription());
 
         ListView interestPointList = findViewById(R.id.listViewInterestPoints);
         this.interestPointDao = AppDatabase.getInstance(this).getInterestPointDao();
