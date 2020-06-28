@@ -36,10 +36,6 @@ public class UserAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        User user = this.getItem(position);
-
-        EditText editTextCreateEmail = convertView.findViewById(R.id.editTextRegisterEmail);
-        EditText editTextCreatePassword = convertView.findViewById(R.id.editTextRegisterPassword);
         return convertView;
     }
 }

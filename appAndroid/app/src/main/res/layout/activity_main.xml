@@ -13,7 +13,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@drawable/monumentos"
-        android:onClick="onClickMonumentos">
+        android:onClick="onClickMonuments">
 
         <TextView
             android:id="@+id/textViewMonumentos"
@@ -34,7 +34,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@drawable/mapa"
-        android:onClick="onClickVisitaGuiada">
+        android:onClick="onClickGuidedTour">
 
 
         <TextView

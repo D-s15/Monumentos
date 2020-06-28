@@ -8,14 +8,17 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = {Monument.class, InterestPoint.class, User.class}, version = 4)
+@Database(entities = {Monument.class, InterestPoint.class, User.class, Visita.class}, version = 6)
 public abstract class AppDatabase extends RoomDatabase {
 
         public abstract MonumentDao getMonumentDao();
 
         public abstract InterestPointDao getInterestPointDao();
 
-        public abstract  UserDao getUserDao();
+        public abstract UserDao getUserDao();
+
+        public abstract VisitaDao getVisitaDao();
+
         private static AppDatabase INSTANCE;
 
         public static AppDatabase getInstance(Context context) {
@@ -39,6 +42,8 @@ public abstract class AppDatabase extends RoomDatabase {
                                         " 'https://www.diarioimobiliario.pt/var/diarioimobiliario/storage/images/_aliases/articleItem/actualidade/reabilitacao/beja-reabre-a-casa-do-governador-no-castelo-da-cidade/beja-casa-governador_no-castelo-da-cidade-02/36063-1-por-PT/BEJA-Casa-Governador_no-castelo-da-cidade-02.jpg')");
                                 db.execSQL("INSERT INTO InterestPoint VALUES(2,'Torre de Menagem','Trata-se de uma fortaleza gótica, cuja construção teve início no século XIII, logo após a conquista cristã da cidade, prolongando-se pelos séculos XIV e, possivelmente, XV.\n" +
                                         "Destacando-se do conjunto da fortaleza, ergue-se a imponente Torre de Menagem, com quase quarenta metros de altura, considerada por alguns especialistas como uma obra-prima da arquitectura militar gótica europeia.', 1, 'https://upload.wikimedia.org/wikipedia/commons/6/62/Torre_castelo_beja.jpg')");
+
+                                db.execSQL("INSERT INTO Visita VALUES(1, '10h30', '12h30', 4, 1, 'https://www.mundoportugues.pt/wp-content/uploads/sites/3/2017/10/article_65142.jpg')");
 
                             }
                         })

@@ -19,11 +19,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onClickVisitaGuiada(View view) {
-
+    public void onClickGuidedTour(View view) {
+    Intent intent = new Intent(this, CustomTourActivity.class);
+    startActivity(intent);
     }
 
-    public void onClickMonumentos(View view) {
+    public void onClickMonuments(View view) {
     Intent intent = new Intent(this, MonumentListActivity.class);
     startActivity(intent);
     }

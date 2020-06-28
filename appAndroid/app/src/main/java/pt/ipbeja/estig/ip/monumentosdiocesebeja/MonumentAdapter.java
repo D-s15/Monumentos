@@ -50,4 +50,9 @@ public class MonumentAdapter extends BaseAdapter {
         textViewMonumentName.setText(monument.getMonumentName());
         return convertView;
     }
+
+    public void updateList(List<Monument> newList) {
+        this.monumentList = newList;
+        this.notifyDataSetChanged();
+    }
 }
