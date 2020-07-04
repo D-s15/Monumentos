@@ -53,6 +53,7 @@ public class MonumentDetailsActivity extends AppCompatActivity {
             textViewCoordinates.setText("localização:" + this.monument.getMonumentURL());
             textViewDescription.setText(this.monument.getMonumentDescription());
 
+
         ListView interestPointList = findViewById(R.id.listViewInterestPoints);
         this.interestPointDao = AppDatabase.getInstance(this).getInterestPointDao();
         this.interestPointAdapter = new InterestPointAdapter(interestPointDao.getInterestPointsByMonumentId(monument.getId()),this);

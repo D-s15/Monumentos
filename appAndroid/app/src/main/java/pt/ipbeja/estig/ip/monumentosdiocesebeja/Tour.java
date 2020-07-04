@@ -3,8 +3,10 @@ package pt.ipbeja.estig.ip.monumentosdiocesebeja;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.List;
+
 @Entity
-public class Visita {
+public class Tour {
     @PrimaryKey(autoGenerate = true)
     private long id;
     private String tourBeginning;
@@ -12,14 +14,16 @@ public class Visita {
     private int numberOfMonuments;
     private long userId;
     private String tourImage;
+    private List<Monument> tourMonuments;
 
-    public Visita(long id, String tourBeginning, String tourFinnish, int numberOfMonuments, long userId, String tourImage) {
+    public Tour(long id, String tourBeginning, String tourFinnish, int numberOfMonuments, long userId, String tourImage, List<Monument> tourMonuments){
         this.id = id;
         this.tourBeginning = tourBeginning;
         this.tourFinnish = tourFinnish;
         this.numberOfMonuments = numberOfMonuments;
         this.userId = userId;
         this.tourImage = tourImage;
+        this.tourMonuments = tourMonuments;
     }
 
     public long getId() {
@@ -68,5 +72,13 @@ public class Visita {
 
     public void setTourImage(String tourImage) {
         this.tourImage = tourImage;
+    }
+
+    public List<Monument> getTourMonuments() {
+        return tourMonuments;
+    }
+
+    public void setTourMonuments(List<Monument> tourMonuments) {
+        this.tourMonuments = tourMonuments;
     }
 }

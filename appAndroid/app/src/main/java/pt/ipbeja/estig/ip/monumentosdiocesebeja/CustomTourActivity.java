@@ -12,17 +12,17 @@ public class CustomTourActivity extends AppCompatActivity {
     private long id;
     private Monument monument;
     private MonumentDao monumentDao;
-    private VisitaDao visitaDao;
-    private VisitaAdapter visitaAdapter;
+    private TourDao tourDao;
+    private TourAdapter tourAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_tour);
         ListView listViewTours = findViewById(R.id.listViewGuidedTour);
-        this.visitaDao = AppDatabase.getInstance(this).getVisitaDao();
-        this.visitaAdapter = new VisitaAdapter(this, visitaDao.getAll());
-        listViewTours.setAdapter(visitaAdapter);
+        this.tourDao = AppDatabase.getInstance(this).getVisitaDao();
+        this.tourAdapter = new TourAdapter(this, tourDao.getAll());
+        listViewTours.setAdapter(tourAdapter);
 
     }
 }

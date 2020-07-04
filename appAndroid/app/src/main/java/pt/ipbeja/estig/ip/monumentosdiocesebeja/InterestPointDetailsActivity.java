@@ -3,6 +3,7 @@ package pt.ipbeja.estig.ip.monumentosdiocesebeja;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -38,5 +39,6 @@ public class InterestPointDetailsActivity extends AppCompatActivity {
         interestPointName.setText(this.interestPoint.getInterestPointName());
         Glide.with(this).load(this.interestPoint.getInterestPointImage()).apply(new RequestOptions().override(600, 600)).into(interestPointImage);
         interestPointDescription.setText("Descrição: " + this.interestPoint.getInterestPointDesctiption());
+        interestPointDescription.setMovementMethod(new ScrollingMovementMethod());
     }
 }

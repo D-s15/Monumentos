@@ -1,7 +1,6 @@
 package pt.ipbeja.estig.ip.monumentosdiocesebeja;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,15 +11,15 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
-public class VisitaAdapter extends BaseAdapter {
-    private List<Visita> tourList;
+public class TourAdapter extends BaseAdapter {
+    private List<Tour> tourList;
     private Context context;
+    private Monument monument;
+    private MonumentDao monumentDao;
 
-    public VisitaAdapter(Context context, List<Visita> tourList){
+    public TourAdapter(Context context, List<Tour> tourList){
         this.tourList = tourList;
         this.context = context;
     }
@@ -31,7 +30,7 @@ public class VisitaAdapter extends BaseAdapter {
     }
 
     @Override
-    public Visita getItem(int position) {
+    public Tour getItem(int position) {
         return this.tourList.get(position);
     }
 
@@ -45,18 +44,18 @@ public class VisitaAdapter extends BaseAdapter {
         if (convertView == null){
             convertView = LayoutInflater.from(this.context).inflate(R.layout.guided_tour_row, parent, false);
         }
-        Visita visita = this.getItem(position);
+        Tour tour = this.getItem(position);
 
         TextView textViewGuidedTour = convertView.findViewById(R.id.textViewVisitaGuiada);
         TextView textViewMonumentNumber = convertView.findViewById(R.id.textViewMonumentsNumber);
         TextView textViewTourBeginning = convertView.findViewById(R.id.textViewtourBeginning);
         TextView textViewTourFinnish = convertView.findViewById(R.id.textViewtourFinnish);
         ImageView imageViewTourImage = convertView.findViewById(R.id.imageViewTourImage);
-        if (!visita.getTourImage().isEmpty()) Glide.with(this.context).load(visita.getTourImage()).apply(new RequestOptions().override(600, 250)).into(imageViewTourImage);
-        textViewGuidedTour.setText("Visita " + visita.getId());
-        textViewMonumentNumber.setText("número de monumentos: " + visita.getNumberOfMonuments());
-        textViewTourBeginning.setText("começo da visita: " + visita.getTourBeginning());
-        textViewTourFinnish.setText("fim da visita: " + visita.getTourFinnish());
+        Glide.with(this.context).load()
+        textViewGuidedTour.setText("Visita " + tour.getId());
+        textViewMonumentNumber.setText("número de monumentos: " + tour.getNumberOfMonuments());
+        textViewTourBeginning.setText("começo da visita: " + tour.getTourBeginning());
+        textViewTourFinnish.setText("fim da visita: " + tour.getTourFinnish());
         return convertView;
     }
 }
