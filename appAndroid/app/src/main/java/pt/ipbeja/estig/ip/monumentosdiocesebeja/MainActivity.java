@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickGuidedTour(View view) {
-    Intent intent = new Intent(this, CustomTourActivity.class);
+    Intent intent = new Intent(this, GuidedTourActivity.class);
     startActivity(intent);
     }
 

@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/listViewGuidedTour"
+        android:id="@+id/listViewCustomTour"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"

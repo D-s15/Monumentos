@@ -40,7 +40,7 @@ public class MonumentListActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long id) {
                 Intent intent = new Intent(MonumentListActivity.this, CustomTourActivity.class);
-                intent.putExtra(CustomTourActivity.KEY_ID, id);
+                intent.putExtra(CustomTourActivity.KEY_MON_ID, id);
                 startActivity(intent);
                 return true;
             }

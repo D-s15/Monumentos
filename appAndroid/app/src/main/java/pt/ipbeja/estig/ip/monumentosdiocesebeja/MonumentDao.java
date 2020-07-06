@@ -17,7 +17,8 @@ public interface MonumentDao {
     @Query("SELECT * FROM Monument WHERE id = :monumentId")
     Monument getById(long monumentId);
 
-    @Query("SELECT monumentImage FROM Monument WHERE id IN(SELECT * FROM Tour WHERE )LIMIT 1")
+  //  @Query("SELECT monumentImage FROM Monument WHERE id IN(SELECT * FROM Tour WHERE )LIMIT 1")
+
     @Insert
     void insertAll(Monument monument);
 

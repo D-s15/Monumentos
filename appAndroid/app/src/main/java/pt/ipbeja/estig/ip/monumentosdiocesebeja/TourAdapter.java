@@ -51,7 +51,7 @@ public class TourAdapter extends BaseAdapter {
         TextView textViewTourBeginning = convertView.findViewById(R.id.textViewtourBeginning);
         TextView textViewTourFinnish = convertView.findViewById(R.id.textViewtourFinnish);
         ImageView imageViewTourImage = convertView.findViewById(R.id.imageViewTourImage);
-        Glide.with(this.context).load()
+        //Glide.with(this.context).load()
         textViewGuidedTour.setText("Visita " + tour.getId());
         textViewMonumentNumber.setText("número de monumentos: " + tour.getNumberOfMonuments());
         textViewTourBeginning.setText("começo da visita: " + tour.getTourBeginning());
