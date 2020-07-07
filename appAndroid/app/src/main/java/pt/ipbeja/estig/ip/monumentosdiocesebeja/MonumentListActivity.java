@@ -39,8 +39,8 @@ public class MonumentListActivity extends AppCompatActivity {
         listViewMonument.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long id) {
-                Intent intent = new Intent(MonumentListActivity.this, CustomTourActivity.class);
-                intent.putExtra(CustomTourActivity.KEY_MON_ID, id);
+                Intent intent = new Intent(MonumentListActivity.this, TourMapActivity.class);
+                intent.putExtra(TourMapActivity.KEY_MON_ID, id);
                 startActivity(intent);
                 return true;
             }

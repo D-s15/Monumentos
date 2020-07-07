@@ -11,9 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GuidedTourActivity"></activity>
+        <activity android:name=".TourMapActivity"></activity>
+        <activity android:name=".GuidedTourActivity" />
         <activity android:name=".TourMonumentsActivity" />
-        <activity android:name=".CustomTourActivity" />
         <activity android:name=".InterestPointDetailsActivity" />
         <activity android:name=".MonumentDetailsActivity" />
         <activity android:name=".MonumentListActivity" />
