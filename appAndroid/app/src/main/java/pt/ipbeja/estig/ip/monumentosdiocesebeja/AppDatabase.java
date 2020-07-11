@@ -8,16 +8,18 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = {Monument.class, InterestPoint.class, User.class, Tour.class}, version = 6)
+@Database(entities = {Monument.class, InterestPoint.class, User.class, Tour.class, MonumentReference.class}, version = 7)
 public abstract class AppDatabase extends RoomDatabase {
 
         public abstract MonumentDao getMonumentDao();
+
+        public abstract MonumentReference getMonumentReferenceDao();
 
         public abstract InterestPointDao getInterestPointDao();
 
         public abstract UserDao getUserDao();
 
-        public abstract TourDao getVisitaDao();
+        public abstract TourDao getTourDao();
 
         private static AppDatabase INSTANCE;
 
@@ -48,7 +50,7 @@ public abstract class AppDatabase extends RoomDatabase {
                                         "O Arco encontra-se entre uma das torres que ladeiam a muralha do castelo de Beja e um dos troços da amurada que envolvia esta mesma localidade. Ao que tudo indica, a sua principal funcionalidade consistia em dar acesso à barbacã que rodeia a torre de menagem, localizada a Oeste deste mesmo recinto." +
                                         "Atualmente, o Arco encontra-se integrado no castelo medieval, ou seja, no exterior da alcáçova. Com efeito, este elemento sofreu algumas alterações ao longo dos séculos, das quais destacamos a edificação de uma segunda porta mais ampla nos finais do século XVI, o que implicou a total demolição do Arco romano. Contudo, esta mesma segunda porta foi também destruída em 1893, ao entender-se que a sua presença naquele local dificultaria o normal fluxo do trânsito. Em 1938, decidiu-se reconstruir o Arco com os vestígios que ainda subsistiam.\n',1,'https://www.allaboutportugal.pt/imagethumb/1700x/resize/770748')");
 
-                                db.execSQL("INSERT INTO Tour VALUES(1, '10h30', '14h30 (com pausa para almoço)', 4, 1, 'https://www.mundoportugues.pt/wp-content/uploads/sites/3/2017/10/article_65142.jpg')");
+                                db.execSQL("INSERT INTO Tour VALUES(1, '10h30', '14h30', 4, 1, 'https://www.mundoportugues.pt/wp-content/uploads/sites/3/2017/10/article_65142.jpg')");
 
                             }
                         })

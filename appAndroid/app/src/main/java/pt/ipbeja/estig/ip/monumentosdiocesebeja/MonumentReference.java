@@ -1,8 +1,12 @@
 package pt.ipbeja.estig.ip.monumentosdiocesebeja;
 
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 
-@Entity(primaryKeys = {"monumentId", "interestPointId"})
+@Entity(primaryKeys = {"monumentId", "interestPointId"},
+foreignKeys = {
+        @ForeignKey(entity = Monument.class, parentColumns = "id", childColumns = "monumentId"),
+        @ForeignKey(entity = InterestPoint.class, parentColumns = "id", childColumns = "interestPointId")})
 public class MonumentReference {
     private long monumentId;
     private long interestPointId;

@@ -14,6 +14,7 @@ public interface MonumentReferenceDao {
 @Query("SELECT * FROM MonumentReference WHERE monumentId = :monumentId")
     List<MonumentReference> getMonumentById(long monumentId);
 
-
+@Query("SELECT * FROM MonumentReference WHERE interestPointId = :interestPointId")
+    List<MonumentReference> getInterestPointById(long interestPointId);
 
 }

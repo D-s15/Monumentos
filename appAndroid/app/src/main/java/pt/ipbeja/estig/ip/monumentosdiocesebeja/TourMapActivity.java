@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 public class TourMapActivity extends AppCompatActivity {
 
@@ -17,6 +18,6 @@ public class TourMapActivity extends AppCompatActivity {
 
         ImageView imageViewMap = findViewById(R.id.imageViewMap);
 
-        Glide.with(this).load(R.drawable.castelo_beja_planta).into(imageViewMap);
+        Glide.with(this).load(R.drawable.castelo_beja_planta).apply(new RequestOptions().override(1000, 1000)).into(imageViewMap);
     }
 }

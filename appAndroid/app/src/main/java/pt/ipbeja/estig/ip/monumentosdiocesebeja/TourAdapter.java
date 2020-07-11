@@ -16,6 +16,7 @@ import java.util.List;
 public class TourAdapter extends BaseAdapter {
     private List<Tour> tourList;
     private Context context;
+    private Tour tour;
     private Monument monument;
     private MonumentDao monumentDao;
 
@@ -51,7 +52,8 @@ public class TourAdapter extends BaseAdapter {
         TextView textViewTourBeginning = convertView.findViewById(R.id.textViewtourBeginning);
         TextView textViewTourFinnish = convertView.findViewById(R.id.textViewtourFinnish);
         ImageView imageViewTourImage = convertView.findViewById(R.id.imageViewTourImage);
-        //Glide.with(this.context).load()
+        Glide.with(this.context).load(tour.getTourImage()).apply(new RequestOptions().override(400,400)).into(imageViewTourImage);
+
         textViewGuidedTour.setText("Visita " + tour.getId());
         textViewMonumentNumber.setText("número de monumentos: " + tour.getNumberOfMonuments());
         textViewTourBeginning.setText("começo da visita: " + tour.getTourBeginning());

@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Tour {
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     private long id;
     private String tourBeginning;
     private String tourFinnish;
