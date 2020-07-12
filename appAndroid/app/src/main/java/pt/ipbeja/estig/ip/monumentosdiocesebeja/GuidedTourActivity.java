@@ -2,7 +2,10 @@ package pt.ipbeja.estig.ip.monumentosdiocesebeja;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class GuidedTourActivity extends AppCompatActivity {
@@ -21,6 +24,14 @@ public class GuidedTourActivity extends AppCompatActivity {
         this.tourAdapter = new TourAdapter(this, this.tourDao.getAll());
         tourList.setAdapter(this.tourAdapter);
 
+        tourList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long id) {
+                Intent intent = new Intent(GuidedTourActivity.this, TourMonumentsActivity.class);
+                intent.putExtra(TourMonumentsActivity.KEY_ID, id);
+                startActivity(intent);
+            }
+        });
 
     }
 }
