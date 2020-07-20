@@ -14,8 +14,9 @@ public class Monument {
     private String monumentDescription;
     private String monumentImage;
     private String monumentURL;
+    private String monumentMap;
 
-    public Monument(long id, String monumentName, String morningSchedule, String afternoonSchedule, String monumentDescription, String monumentImage, String monumentURL) {
+    public Monument(long id, String monumentName, String morningSchedule, String afternoonSchedule, String monumentDescription, String monumentImage, String monumentURL, String monumentMap) {
         this.id = id;
         this.monumentName = monumentName;
         this.morningSchedule = morningSchedule;
@@ -23,6 +24,7 @@ public class Monument {
         this.monumentDescription = monumentDescription;
         this.monumentImage = monumentImage;
         this.monumentURL = monumentURL;
+        this.monumentMap = monumentMap;
     }
 
     public String getMonumentURL() {
@@ -79,5 +81,13 @@ public class Monument {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getMonumentMap() {
+        return monumentMap;
+    }
+
+    public void setMonumentMap(String monumentMap) {
+        this.monumentMap = monumentMap;
     }
 }
