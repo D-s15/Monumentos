@@ -49,7 +49,6 @@ public abstract class AppDatabase extends RoomDatabase {
 
                                 db.execSQL("INSERT INTO Tour VALUES(1, '10h30', '14h30', 'https://www.mundoportugues.pt/wp-content/uploads/sites/3/2017/10/article_65142.jpg', 1)");
                                 db.execSQL("INSERT INTO Tour VALUES(2, '15h30', '17h00', 'https://lh5.googleusercontent.com/p/AF1QipMPu3XXs0oUfzRUA8F6G85r-HRj40PsErvvxEN8=w408-h306-k-no', 2)");
-                                db.execSQL("INSERT INTO Tour VALUES(3, '16h00', '17h00', 'https://lh5.googleusercontent.com/p/AF1QipN6dwKWQFloQypTjuqQBRiJzdScjXP2juMEG7c4=w296-h202-n-k-no', 3)");
 
                             }
                         })

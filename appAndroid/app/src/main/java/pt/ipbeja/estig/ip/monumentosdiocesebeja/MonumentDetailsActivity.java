@@ -78,6 +78,7 @@ public class MonumentDetailsActivity extends AppCompatActivity {
 
     public void onClickGuidedTour(View view){
         Intent intent = new Intent(this, TourGuideActivity.class);
+        intent.putExtra(TourGuideActivity.MON_ID, id);
         startActivity(intent);
     }
 }
