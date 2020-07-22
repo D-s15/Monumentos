@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -52,7 +53,7 @@ public class MonumentDetailsActivity extends AppCompatActivity {
             textViewAfternoonSchedule.setText("horário de tarde: " + this.monument.getAfternoonSchedule());
             textViewCoordinates.setText("localização:" + this.monument.getMonumentURL());
             textViewDescription.setText(this.monument.getMonumentDescription());
-
+        textViewDescription.setMovementMethod(new ScrollingMovementMethod());
 
         ListView interestPointList = findViewById(R.id.listViewInterestPoints);
         this.interestPointDao = AppDatabase.getInstance(this).getInterestPointDao();
@@ -67,5 +68,16 @@ public class MonumentDetailsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public void onClickCustomTour(View view){
+        Intent intent = new Intent(this, TourMapActivity.class);
+        intent.putExtra(TourMapActivity.KEY_MON_ID, id);
+        startActivity(intent);
+    }
+
+    public void onClickGuidedTour(View view){
+        Intent intent = new Intent(this, TourGuideActivity.class);
+        startActivity(intent);
     }
 }

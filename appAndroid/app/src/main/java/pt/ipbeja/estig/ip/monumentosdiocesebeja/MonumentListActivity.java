@@ -26,23 +26,13 @@ public class MonumentListActivity extends AppCompatActivity {
         this.monumentAdapter = new MonumentAdapter(monumentDao.getAll(), this);
         listViewMonument.setAdapter(this.monumentAdapter);
 
-        listViewMonument.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        listViewMonument.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long id) {
                 Intent intent = new Intent(MonumentListActivity.this, MonumentDetailsActivity.class);
                 intent.putExtra(MonumentDetailsActivity.KEY_ID, id);
                 startActivity(intent);
-            }
-        });
-
-        listViewMonument.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long id) {
-                Intent intent = new Intent(MonumentListActivity.this, TourMapActivity.class);
-                intent.putExtra(TourMapActivity.KEY_MON_ID, id);
-                startActivity(intent);
-                return true;
             }
         });
     }

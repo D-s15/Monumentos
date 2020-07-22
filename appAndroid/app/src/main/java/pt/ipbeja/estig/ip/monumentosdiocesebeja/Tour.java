@@ -10,17 +10,14 @@ public class Tour {
     private long id;
     private String tourBeginning;
     private String tourFinnish;
-    private String monumentName;
-    private long userId;
     private String tourImage;
+    private long tourMonument;
 
-
-    public Tour(long id, String tourBeginning, String tourFinnish, String monumentName, long userId, String tourImage){
+    public Tour(long id, String tourBeginning, String tourFinnish, String tourImage, long tourMonument){
         this.id = id;
         this.tourBeginning = tourBeginning;
+        this.tourMonument = tourMonument;
         this.tourFinnish = tourFinnish;
-        this.monumentName = monumentName;
-        this.userId = userId;
         this.tourImage = tourImage;
     }
 
@@ -48,22 +45,6 @@ public class Tour {
         this.tourFinnish = tourFinnish;
     }
 
-    public String getNumberOfMonuments() {
-        return monumentName;
-    }
-
-    public void setNumberOfMonuments(String monumentName) {
-        this.monumentName = monumentName;
-    }
-
-    public long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(long userId) {
-        this.userId = userId;
-    }
-
     public String getTourImage() {
         return tourImage;
     }
@@ -72,4 +53,11 @@ public class Tour {
         this.tourImage = tourImage;
     }
 
+    public long getTourMonument() {
+        return tourMonument;
+    }
+
+    public void setTourMonument(long tourMonument) {
+        this.tourMonument = tourMonument;
+    }
 }

@@ -17,6 +17,7 @@ public class TourAdapter extends BaseAdapter {
     private List<Tour> tourList;
     private Context context;
     private Tour tour;
+    private TourDao tourDao;
     private Monument monument;
     private MonumentDao monumentDao;
 
@@ -46,18 +47,19 @@ public class TourAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(this.context).inflate(R.layout.guided_tour_row, parent, false);
         }
         Tour tour = this.getItem(position);
+        this.tourDao = AppDatabase.getInstance(this.context).getTourDao();
 
         TextView textViewGuidedTour = convertView.findViewById(R.id.textViewVisitaGuiada);
         TextView textViewMonumentNumber = convertView.findViewById(R.id.textViewMonumentsNumber);
         TextView textViewTourBeginning = convertView.findViewById(R.id.textViewtourBeginning);
         TextView textViewTourFinnish = convertView.findViewById(R.id.textViewtourFinnish);
         ImageView imageViewTourImage = convertView.findViewById(R.id.imageViewTourImage);
-        Glide.with(this.context).load(tour.getTourImage()).apply(new RequestOptions().override(400,400)).into(imageViewTourImage);
+        Glide.with(this.context).load(tourDao.getMonumentImageById(tour.getTourMonument())).apply(new RequestOptions().override(300,300)).into(imageViewTourImage);
 
         textViewGuidedTour.setText("Visita " + tour.getId());
-        textViewMonumentNumber.setText("número de monumentos: " + tour.getNumberOfMonuments());
-        textViewTourBeginning.setText("começo da visita: " + tour.getTourBeginning());
-        textViewTourFinnish.setText("fim da visita: " + tour.getTourFinnish());
+        textViewMonumentNumber.setText(tourDao.getMonumentNameById(tour.getId()));
+        textViewTourBeginning.setText("Começo da visita: " + tour.getTourBeginning());
+        textViewTourFinnish.setText("Fim da visita: " + tour.getTourFinnish());
         return convertView;
     }
 }

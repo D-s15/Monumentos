@@ -46,7 +46,7 @@ public class MonumentAdapter extends BaseAdapter {
         Monument monument = this.getItem(position);
         TextView textViewMonumentName = convertView.findViewById(R.id.textViewMonumentName);
         ImageView imageViewMonumentImage = convertView.findViewById(R.id.imageViewMonumentsImage);
-        if (!monument.getMonumentImage().isEmpty()) Glide.with(this.context).load(monument.getMonumentImage()).apply(new RequestOptions().override(600, 200)).into(imageViewMonumentImage);
+        if (!monument.getMonumentImage().isEmpty()) Glide.with(this.context).load(monument.getMonumentImage()).apply(new RequestOptions().override(500, 500)).into(imageViewMonumentImage);
         textViewMonumentName.setText(monument.getMonumentName());
         return convertView;
     }

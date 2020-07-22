@@ -27,11 +27,13 @@ public class GuidedTourActivity extends AppCompatActivity {
         tourList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long id) {
-                Intent intent = new Intent(GuidedTourActivity.this, TourMonumentsActivity.class);
-                intent.putExtra(TourMonumentsActivity.KEY_ID, id);
+                Intent intent = new Intent(GuidedTourActivity.this, MonumentDetailsActivity.class);
+                intent.putExtra(MonumentDetailsActivity.KEY_ID, id);
                 startActivity(intent);
             }
         });
 
     }
+
+
 }
