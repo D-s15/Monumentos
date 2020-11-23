@@ -12,13 +12,15 @@ public class InterestPoint {
     private String interestPointDesctiption;
     private long monumentId;
     private String interestPointImage;
+    private boolean favorite;
 
-    public InterestPoint(long id, String interestPointName, String interestPointDesctiption, long monumentId, String interestPointImage) {
+    public InterestPoint(long id, String interestPointName, String interestPointDesctiption, long monumentId, String interestPointImage, boolean favorite) {
         this.id = id;
         this.interestPointName = interestPointName;
         this.interestPointDesctiption = interestPointDesctiption;
         this.monumentId = monumentId;
         this.interestPointImage = interestPointImage;
+        this.favorite = favorite;
     }
 
     public long getId() {
@@ -59,5 +61,13 @@ public class InterestPoint {
 
     public void setInterestPointImage(String interestPointImage) {
         this.interestPointImage = interestPointImage;
+    }
+
+    public boolean isFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
     }
 }

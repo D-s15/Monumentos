@@ -49,4 +49,5 @@ public class InterestPointAdapter extends BaseAdapter {
         textViewInterestPoint.setText(interestPoint.getInterestPointName());
         return convertView;
     }
-}
+
+    }

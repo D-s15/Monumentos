@@ -33,7 +33,6 @@ public class MonumentDetailsActivity extends AppCompatActivity {
         ImageView imageViewMonumentImage = findViewById(R.id.imageViewMonumentImage);
         TextView textViewMorningSchedule = findViewById(R.id.textViewMorningSchedule);
         TextView textViewAfternoonSchedule = findViewById(R.id.textViewAfternoonSchedule);
-        TextView textViewCoordinates = findViewById(R.id.textViewLocationURL);
         TextView textViewDescription = findViewById(R.id.textViewDescription);
 
         this.monumentDao = AppDatabase.getInstance(this).getMonumentDao();
@@ -51,9 +50,7 @@ public class MonumentDetailsActivity extends AppCompatActivity {
             Glide.with(this).load(this.monument.getMonumentImage()).apply(new RequestOptions().override(650, 650)).into(imageViewMonumentImage);
             textViewMorningSchedule.setText("horário de manhã: " + this.monument.getMorningSchedule());
             textViewAfternoonSchedule.setText("horário de tarde: " + this.monument.getAfternoonSchedule());
-            textViewCoordinates.setText("localização:" + this.monument.getMonumentURL());
             textViewDescription.setText(this.monument.getMonumentDescription());
-        textViewDescription.setMovementMethod(new ScrollingMovementMethod());
 
         ListView interestPointList = findViewById(R.id.listViewInterestPoints);
         this.interestPointDao = AppDatabase.getInstance(this).getInterestPointDao();
@@ -71,14 +68,8 @@ public class MonumentDetailsActivity extends AppCompatActivity {
     }
 
     public void onClickCustomTour(View view){
-        Intent intent = new Intent(this, TourMapActivity.class);
-        intent.putExtra(TourMapActivity.KEY_MON_ID, id);
-        startActivity(intent);
     }
 
     public void onClickGuidedTour(View view){
-        Intent intent = new Intent(this, TourGuideActivity.class);
-        intent.putExtra(TourGuideActivity.MON_ID, id);
-        startActivity(intent);
     }
 }

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,9 +25,9 @@ public class InterestPointDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_interest_point_details);
 
         TextView interestPointName = findViewById(R.id.textViewInterestPointName);
-        ImageView interestPointImage = findViewById(R.id.imageViewInterestPointImage);
+        ImageView interestPointImage = findViewById(R.id.imageViewCheckBox);
         TextView interestPointDescription = findViewById(R.id.textViewInterestPointDescription);
-
+        ImageButton imageButtonNarration = findViewById(R.id.imageButtonNarration);
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             this.id = bundle.getLong(INTEREST_POINT_ID, -1);
@@ -39,6 +41,16 @@ public class InterestPointDetailsActivity extends AppCompatActivity {
         interestPointName.setText(this.interestPoint.getInterestPointName());
         Glide.with(this).load(this.interestPoint.getInterestPointImage()).apply(new RequestOptions().override(600, 600)).into(interestPointImage);
         interestPointDescription.setText("Descrição: " + this.interestPoint.getInterestPointDesctiption());
+
         interestPointDescription.setMovementMethod(new ScrollingMovementMethod());
+
+        Glide.with(this).load(R.drawable.ic_volume_up_24px).into(imageButtonNarration);
+        Button toggleButton = findViewById(R.id.buttonToggleSeen);
+        if (interestPoint.isFavorite() == true){
+            toggleButton.setText("marcar ponto de interesse como não visto");
+
+        }else{
+            toggleButton.setText("marcar ponto de interesse como visto");
+        }
     }
 }
