@@ -2,16 +2,24 @@ package pt.ipbeja.estig.ip.monumentosdiocesebeja;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
+import com.google.gson.annotations.SerializedName;
+
 @Entity
 public class Monument {
 
     @PrimaryKey
     private long id;
+    //@SerializedName("name")
     private String monumentName;
+    //@SerializedName("schedule_am")
     private String morningSchedule;
+    //@SerializedName("schedule_pm")
     private String afternoonSchedule;
+    //@SerializedName("description")
     private String monumentDescription;
     private String closing;
+    //@SerializedName("image")
     private String monumentImage;
 
     public Monument(long id, String monumentName, String morningSchedule, String afternoonSchedule, String monumentDescription, String closing, String monumentImage) {

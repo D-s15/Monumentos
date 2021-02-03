@@ -9,14 +9,11 @@ import retrofit2.http.Query;
 
 public interface MonumentService {
 
-  @GET("monuments")
+  @GET("monument")
   Call<List<Monument>> getMonuments();
 
-  @GET("monuments/{id}")
+  @GET("monument/{id}")
   Call<Monument> getMonument(@Path("id") long id);
-
-  @GET("monuments/{name}")
-  Call<List<Monument>> getMonumentsByName(@Path("name") String name);
 
   @GET("interestPoints/{id}")
   Call<InterestPoint> getInterestPointById(@Path("id") long id);

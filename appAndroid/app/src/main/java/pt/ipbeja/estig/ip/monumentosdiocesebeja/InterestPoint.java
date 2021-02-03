@@ -3,14 +3,19 @@ package pt.ipbeja.estig.ip.monumentosdiocesebeja;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.google.gson.annotations.SerializedName;
+
 @Entity
 public class InterestPoint {
 
     @PrimaryKey
     private long id;
+    //@SerializedName("name")
     private String interestPointName;
+    //@SerializedName("description")
     private String interestPointDescription;
     private long monumentId;
+    //@SerializedName("image")
     private String interestPointImage;
     private boolean seen;
 

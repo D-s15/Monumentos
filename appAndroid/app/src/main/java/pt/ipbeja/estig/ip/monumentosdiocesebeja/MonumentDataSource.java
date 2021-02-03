@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MonumentDataSource {
 
-    private static final String ENDPOINT = "https://my-json-server.typicode.com/D-s15/API-monumentos/";
+    private static final String ENDPOINT = "http://localhost:8000/api/";
 
     private static final Retrofit retrofit = new Retrofit.Builder().baseUrl(ENDPOINT).
             addConverterFactory(GsonConverterFactory.create()).build();
