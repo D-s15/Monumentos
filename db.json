@@ -1,0 +1,54 @@
+{
+"monuments": [
+    {
+        "id": "1",
+        "monumentName": "Castelo de Beja",
+        "monumentImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTZMxs9tIzCTMJTmV2tYCpyAVNCz_aLjLVWQQ&usqp=CAU",
+        "morningSchedule": "9h30-12h30",
+        "afternoonSchedule": "14-18h",
+        "monumentDescription": "O Castelo de Beja data da época da Romanização: foi onde Júlio César formalizou a paz com os Lusitanos. O primitivo “oppidum” deu lugar a uma “civitas” (“Pax Julia”), que veio a sediar uma das três jurisdições romanas da Lusitânia",
+        "closing":"encerra às segundas"
+    },
+    {
+        "id": "2",
+        "monumentName": "Museu Rainha D. Leonor",
+        "monumentImage": "https://cdn.visitportugal.com/sites/default/files/styles/encontre_detalhe_poi_destaque/public/mediateca/N4.MPS1019d.jpg?itok=LssQQukw",
+        "morningSchedule": "9h30-12h30, encerra segunda",
+        "afternoonSchedule": "14h - 17h15, encerra segunda",
+        "monumentDescription": "O Convento foi fundado em 1459 pelo Infante D. Fernando, irmão de Afonso V de Portugal, e sua esposa, a Infanta D. Beatriz. O convento, primitivamente era bastante amplo mas, séculos mais tarde, sofreu a demolição de uma parte. Este museu conheceu três fases distintas enquanto instituição museológica: Museu Sisenando-Cenáculo-Pacense (1791-1802), Museu Archeologico Municipal de Beja, entre os anos de (1892-1927) e Museu Rainha Dona Leonor ou Museu Regional de Beja (1927 - atualidade)",
+        "closing":"encerra às segundas"
+    }
+],
+"interestPoints": [
+    {
+        "id": "1",
+        "interestPointName": "casa do governador",
+        "interestPointDescription" : "Trata-se atualmente do Museu Jorge Vieira. Foi objeto de uma primeira intervenção em 1992 face ao seu estado de ruína. A obra, da autoria da arquitecta Maria João George, recebeu o Prémio Municipal de Arquitetura Espiga de Ouro de 1993. Em 1995, a Câmara Municipal de Beja adquiriu-o, com o objetivo de albergar a coleção de obras que o artista ofereceu ao município. É constituído por um edifício com dois pisos: no primeiro é apresentada a colecção de desenho e escultura doada pelo escultor; o piso inferior destina-se a exposições temporárias, performances, instalações, conferências e debates, workshops, ateliers de artes plásticas, etc.'",
+        "monumentId" : "1",
+        "interestPointImage": "https://www.diarioimobiliario.pt/var/diarioimobiliario/storage/images/_aliases/articleItem/actualidade/reabilitacao/beja-reabre-a-casa-do-governador-no-castelo-da-cidade/beja-casa-governador_no-castelo-da-cidade-02/36063-1-por-PT/BEJA-Casa-Governador_no-castelo-da-cidade-02.jpg"
+    },
+    {
+        "id": "2",
+        "interestPointName": "Torre de Menagem",
+        "interestPointDescription" : "description",
+        "monumentId" : "1",
+        "interestPointImage": "https://upload.wikimedia.org/wikipedia/commons/6/62/Torre_castelo_beja.jpg"
+    },
+    {
+        "id": "3",
+        "interestPointName": "Arco Romano de Beja",
+        "interestPointDescription" : "description",
+        "monumentId" : "1",
+        "interestPointImage": "https://www.allaboutportugal.pt/imagethumb/1700x/resize/770748"
+    },
+    {
+        "id": "4",
+        "interestPointName": "pi",
+        "interestPointDescription" : "descrição",
+        "monumentId" : "2",
+        "interestPointImage": "https://lh3.googleusercontent.com/proxy/rN9kbZQ84uCMcl70nDGAPTdg4usC1crrUOUaSg16n44UVtJ022PIOwKLym3bBK-EUfIxRV9SrVTatA3o2oYmytXoafOQolH27lA3kmxZlD02yio1t_s3g4Uuj_jlZ1eBLqsaMinQdFPnoS4OA2lW3sttSLoi4HZx2Q"
+    }
+]
+
+
+}
