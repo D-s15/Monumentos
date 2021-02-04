@@ -10,16 +10,16 @@ public class Monument {
 
     @PrimaryKey
     private long id;
-    //@SerializedName("name")
+    @SerializedName("name")
     private String monumentName;
-    //@SerializedName("schedule_am")
+    @SerializedName("schedule_am")
     private String morningSchedule;
-    //@SerializedName("schedule_pm")
+    @SerializedName("schedule_pm")
     private String afternoonSchedule;
-    //@SerializedName("description")
+    @SerializedName("description")
     private String monumentDescription;
     private String closing;
-    //@SerializedName("image")
+    @SerializedName("image")
     private String monumentImage;
 
     public Monument(long id, String monumentName, String morningSchedule, String afternoonSchedule, String monumentDescription, String closing, String monumentImage) {

@@ -10,12 +10,12 @@ public class InterestPoint {
 
     @PrimaryKey
     private long id;
-    //@SerializedName("name")
+    @SerializedName("name")
     private String interestPointName;
-    //@SerializedName("description")
+    @SerializedName("description")
     private String interestPointDescription;
     private long monumentId;
-    //@SerializedName("image")
+    @SerializedName("image")
     private String interestPointImage;
     private boolean seen;
 

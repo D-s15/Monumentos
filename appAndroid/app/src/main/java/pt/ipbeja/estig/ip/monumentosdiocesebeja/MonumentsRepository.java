@@ -40,12 +40,12 @@ public class MonumentsRepository {
     }
 
     public void updateMonuments(final Context context){
-        Call<List<Monument>> call = monumentService.getMonuments();
-        call.enqueue(new Callback<List<Monument>>() {
+        Call<APIResponse<List<Monument>>> call = monumentService.getMonuments();
+        call.enqueue(new Callback<APIResponse<List<Monument>>>() {
             @Override
-            public void onResponse(Call<List<Monument>> call, Response<List<Monument>> response) {
+            public void onResponse(Call<APIResponse<List<Monument>>> call, Response<APIResponse<List<Monument>>> response) {
                 if (response.isSuccessful()){
-                    final List<Monument> monumentList = response.body();
+                    final List<Monument> monumentList = response.body().getData();
                     if (monumentList != null) {
                         monumentsListLiveData.postValue(monumentList);
                     }
@@ -53,7 +53,7 @@ public class MonumentsRepository {
             }
 
             @Override
-            public void onFailure(Call<List<Monument>> call, Throwable t) {
+            public void onFailure(Call<APIResponse<List<Monument>>> call, Throwable t) {
                 Log.e("Main Activity", "An error occurred");
             }
         });
@@ -61,12 +61,12 @@ public class MonumentsRepository {
 
     public LiveData<Monument> getMonument(long id, final Context context){
         MutableLiveData<Monument> monumentLiveData = new MutableLiveData<>();
-        Call<Monument> call = monumentService.getMonument(id);
-        call.enqueue(new Callback<Monument>() {
+        Call<APIResponse<Monument>> call = monumentService.getMonument(id);
+        call.enqueue(new Callback<APIResponse<Monument>>() {
             @Override
-            public void onResponse(Call<Monument> call, Response<Monument> response) {
+            public void onResponse(Call<APIResponse<Monument>> call, Response<APIResponse<Monument>> response) {
                 if (response.isSuccessful()) {
-                    final Monument monument = response.body();
+                    final Monument monument = response.body().getData();
                     if (monument != null){
                         monumentLiveData.postValue(monument);
                     }
@@ -74,7 +74,7 @@ public class MonumentsRepository {
             }
 
             @Override
-            public void onFailure(Call<Monument> call, Throwable t) {
+            public void onFailure(Call<APIResponse<Monument>> call, Throwable t) {
                 Log.e("Details Activity", "An error occurred");
             }
         });
@@ -83,12 +83,12 @@ public class MonumentsRepository {
 
     public LiveData<InterestPoint> getInterestPoint(long id, final Context context){
 
-        Call<InterestPoint> call = monumentService.getInterestPointById(id);
-        call.enqueue(new Callback<InterestPoint>() {
+        Call<APIResponse<InterestPoint>> call = monumentService.getInterestPointById(id);
+        call.enqueue(new Callback<APIResponse<InterestPoint>>() {
             @Override
-            public void onResponse(Call<InterestPoint> call, Response<InterestPoint> response) {
+            public void onResponse(Call<APIResponse<InterestPoint>> call, Response<APIResponse<InterestPoint>> response) {
                 if (response.isSuccessful()){
-                    final InterestPoint interestPoint = response.body();
+                    final InterestPoint interestPoint = response.body().getData();
                     if (interestPoint != null) {
                         interestPointLiveData.postValue(interestPoint);
                     }
@@ -96,7 +96,7 @@ public class MonumentsRepository {
             }
 
             @Override
-            public void onFailure(Call<InterestPoint> call, Throwable t) {
+            public void onFailure(Call<APIResponse<InterestPoint>> call, Throwable t) {
             Log.e("Details Activity", "an error occurred");
             }
         });
@@ -105,18 +105,18 @@ public class MonumentsRepository {
 
     public LiveData<List<InterestPoint>> getInterestPointsByMonumentId(final long monumentId, final Context context){
         MutableLiveData<List<InterestPoint>> interestPointsList = new MutableLiveData<>();
-        Call<List<InterestPoint>> call = monumentService.getInterestPointsByMonumentId(monumentId);
-        call.enqueue(new Callback<List<InterestPoint>>() {
+        Call<APIResponse<List<InterestPoint>>> call = monumentService.getInterestPointsByMonumentId(monumentId);
+        call.enqueue(new Callback<APIResponse<List<InterestPoint>>>() {
             @Override
-            public void onResponse(Call<List<InterestPoint>> call, Response<List<InterestPoint>> response) {
+            public void onResponse(Call<APIResponse<List<InterestPoint>>> call, Response<APIResponse<List<InterestPoint>>> response) {
                 if (response.isSuccessful()) {
-                    final List<InterestPoint> interestPointsByMonumentIdList = response.body();
+                    final List<InterestPoint> interestPointsByMonumentIdList = response.body().getData();
                     interestPointsList.postValue(interestPointsByMonumentIdList);
                 }
             }
 
             @Override
-            public void onFailure(Call<List<InterestPoint>> call, Throwable t) {
+            public void onFailure(Call<APIResponse<List<InterestPoint>>> call, Throwable t) {
             Log.e("Details Activity", "an error occurred");
             }
         });
