@@ -18,7 +18,6 @@ public class MonumentsRepository {
     private InterestPointDao interestPointDao;
     private MonumentService monumentService = MonumentDataSource.getMonumentService();
     private MutableLiveData<List<Monument>> monumentsListLiveData = new MutableLiveData<>();
-    private MutableLiveData<List<InterestPoint>> interestPointsListLiveData = new MutableLiveData<>();
     private MutableLiveData<InterestPoint> interestPointLiveData = new MutableLiveData<>();
 
     private MonumentDao getMonumentDao(final Context context){
@@ -41,7 +40,7 @@ public class MonumentsRepository {
 
     public void updateMonuments(final Context context){
         Call<APIResponse<List<Monument>>> call = monumentService.getMonuments();
-        call.enqueue(new Callback<APIResponse<List<Monument>>>() {
+        call.enqueue(new Callback<APIResponse<List<Monument>>>(){
             @Override
             public void onResponse(Call<APIResponse<List<Monument>>> call, Response<APIResponse<List<Monument>>> response) {
                 if (response.isSuccessful()){

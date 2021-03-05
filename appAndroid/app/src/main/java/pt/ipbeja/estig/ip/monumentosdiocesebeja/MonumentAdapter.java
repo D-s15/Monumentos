@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MonumentAdapter extends BaseAdapter {
+
     private List<Monument> monumentList = new ArrayList<>();
     private Context context;
 
